@@ -93,6 +93,23 @@
 <p>This will be turned into <abbr title="HyperText Markup Language">HTML</abbr>.</p>
 <div class="highlight"><pre><span></span>df = pd.read_csv(&#39;sample.csv&#39;, dtype={&#39;id&#39;: str, &#39;units&#39;: float})
 </pre></div>
+<p><div id="09e43abf-8bed-4751-8e0f-9d26c459f48c"></div></p>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+function getPlotlyJSON(div, url) {
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        var figure = JSON.parse(request.responseText);
+        Plotly.plot(div, figure.data, figure.layout);
+      }
+    };
+    request.send();
+}
+getPlotlyJSON("09e43abf-8bed-4751-8e0f-9d26c459f48c", "/jsons/gaussian.json");
+</script>
 
   </div>
   <div class="tag-cloud">
