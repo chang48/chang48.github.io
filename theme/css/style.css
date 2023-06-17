@@ -230,19 +230,22 @@ details p {
     hyphens: auto;
 }
 
-.post-title::before {
+/*.post-title::before {
     content: '§';
     margin-left: -1em;
     position: absolute;
-}
+}*/
 
 .post-title {
     margin: 0;
     font-size: 1.75em;
 }
 
-.post-title a:hover,
+/*.post-title a:hover,
 .post-title::before:hover {
+    color: var(--color-link-hover);
+}*/
+.post-title a:hover {
     color: var(--color-link-hover);
 }
 
@@ -446,9 +449,9 @@ html[lang='zh'] details p {
         text-indent: 0;
     }
 
-    .post-title::before {
+    /*.post-title::before {
         content: none;
-    }
+    }*/
 
     .post-footer {
         padding: 1rem 0;
