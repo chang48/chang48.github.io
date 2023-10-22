@@ -1,0 +1,101 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Normal distributions and $\pi$ - walking in the woods</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="fermion"><meta name=description content="Normal distributions are a class of continuous probability distribution for random variables. They often show up in measurements of physical quantities. For example, the human height is normally distributed. In fact, it is claimed that variables in natural and social sciences are normally or approximately normally distributed. Weight, reading ability, test scores, blood pressure, $\ldots$
+"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.119.0 with theme even"><link rel=canonical href=http://chang48.github.io/post/2021/gaussial-integral/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Normal distributions and $\pi$"><meta property="og:description" content="Normal distributions are a class of continuous probability distribution for random variables.
+They often show up in measurements of physical quantities. For example,
+
+the human height is normally distributed. In fact, it is claimed that variables in natural
+and social sciences are normally or approximately normally distributed. Weight, reading
+ability, test scores, blood pressure, $\ldots$"><meta property="og:type" content="article"><meta property="og:url" content="http://chang48.github.io/post/2021/gaussial-integral/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-12-25T00:46:08-07:00"><meta property="article:modified_time" content="2021-12-25T00:46:08-07:00"><meta itemprop=name content="Normal distributions and $\pi$"><meta itemprop=description content="Normal distributions are a class of continuous probability distribution for random variables.
+They often show up in measurements of physical quantities. For example,
+
+the human height is normally distributed. In fact, it is claimed that variables in natural
+and social sciences are normally or approximately normally distributed. Weight, reading
+ability, test scores, blood pressure, $\ldots$"><meta itemprop=datePublished content="2021-12-25T00:46:08-07:00"><meta itemprop=dateModified content="2021-12-25T00:46:08-07:00"><meta itemprop=wordCount content="716"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Normal distributions and $\pi$"><meta name=twitter:description content="Normal distributions are a class of continuous probability distribution for random variables.
+They often show up in measurements of physical quantities. For example,
+
+the human height is normally distributed. In fact, it is claimed that variables in natural
+and social sciences are normally or approximately normally distributed. Weight, reading
+ability, test scores, blood pressure, $\ldots$"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>walking in the woods</a></div><div class=mobile-navbar-icon><span></span>
+<span></span>
+<span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>walking in the woods</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Normal distributions and $\pi$</h1><div class=post-meta><span class=post-time>2021-12-25</span><div class=post-category><a href=/categories/math/>math</a></div></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#standard-approach>Standard approach</a></li><li><a href=#contour-integration>Contour integration</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><p>Normal distributions are a class of continuous probability distribution for random variables.
+They often show up in measurements of physical quantities. For example,
+<a href=https://ourworldindata.org/human-height#height-is-normally-distributed target=_blank>the human height is normally distributed</a>. In fact, it is claimed that variables in natural
+and social sciences are normally or approximately normally distributed. Weight, reading
+ability, test scores, blood pressure, $\ldots$</p><p>The underlying reason for this is partly due
+to the <a href=https://en.wikipedia.org/wiki/Central_limit_theorem target=_blank>central limit theorem</a>.
+The theorem says that the average of many observations of a random variable with finite average
+and variance is also a random variable whose distribution converges to a normal distribution as
+the number of observations increases. This conclusion has a very important implication for
+Monte Carlo methods which I will discuss in another post.</p><p>In the simplest case (zero mean and unit variance), the distribution is written as
+\begin{equation}
+f(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}.
+\end{equation}
+If we plot the function $f(x)$, the curve looks like the following</p><figure class=center><img src=normal_distribution.png><figcaption><h4>Normal Distribution</h4></figcaption></figure><p>The prefactor $1/\sqrt{2\pi}$ of $f(x)$ is its normalization constant which guarantees that
+the integration of $f(x)$ over the entire real axis is unity
+\begin{equation}
+\int_{-\infty}^\infty f(x)dx = 1.
+\end{equation}
+We all know that the mathematical constant $\pi$ is the ratio of a circle&rsquo;s circumference
+to its diameter. This brings up an interesting question: why does $\pi$ show up in probability
+distributions that seemingly have nothing to do with circles?</p><p>The reason, it turns out, boils down to how the normalization of a normal distribution is
+calculated. A normal distribution belongs to a type of function called the Gaussian function
+$g(x) = e^{-x^2}$. Its integral is
+\begin{equation}
+\int_{-\infty}^\infty e^{-x^2}dx = \sqrt{\pi}.
+\end{equation}</p><h3 id=standard-approach>Standard approach</h3><p>A textbook approach to compute the Gaussian integral is to compute the square of the integral
+\begin{equation}
+\left(\int_{-\infty}^\infty e^{-x^2}dx\right)^2 = \int_{-\infty}^\infty\int_{-\infty}^\infty e^{-(x^2+y^2)}dxdy.
+\end{equation}
+We can translate the Cartesian coordinates $(x,y)$ into polar coordinates $(r,\theta)$ using the
+identity
+\begin{equation}
+x^2+y^2 = r^2,
+\end{equation}
+which is exactly an <em>equation of a circle with radius</em> $r$. It is through this equation (transformation)
+that allows $\pi$ to have a place in the normal distribution. To continue, the square of the Gaussian
+integral now becomes
+\begin{align}
+\int_{-\infty}^\infty\int_{-\infty}^\infty e^{-(x^2+y^2)}dxdy
+&= \int_0^{2\pi}\int_0^\infty e^{-r^2}\,r\,drd\theta \\\
+&= 2\pi\int_0^\infty \frac{1}{2} e^{-y} dy,\,\,\,\,\,\,\mbox{where}\,\,\, y=r^2 \\\
+&= \pi.
+\end{align}
+As a result, the normalization of the Gaussian function is $\sqrt{\pi}$.</p><h3 id=contour-integration>Contour integration</h3><p>Of course, the method described above is not the only way to normalize the Gaussian integral. There are many
+proofs ranging from differentiation of an integral, volume integration, $\Gamma$-function,
+asymptotic approximation, Stirling&rsquo;s formula, Laplace&rsquo;s original proof, and the residue theorem.</p><p>Speaking about the residue theorem, it is a powerful tool for evaluating integrals. The theorem generalizes the Cauchy&rsquo;s
+theorem in that it expresses the integral of an analytic function $f(z)$ around a closed contour $C$ depends <em>only</em> on
+the properties of a few special points (singularities, or poles) inside the contour.</p><figure class=center><img src=residue.png width=260></figure><p>\begin{equation}
+\int_C f(z) dz = 2\pi i\sum_{j=1}^n R_j,
+\end{equation}
+where $R_j$, one of those special points, is called the residue at the point $z_j$:
+\begin{equation}
+R_j = \frac{1}{2\pi i}\oint_{C_j} f(z) dz.
+\end{equation}</p><p>So the residue theorem by definition has a prefactor that contains $\pi$. However, if we want to apply the
+theorem to the Gaussian function, we would hit a wall. This is because the complex Gaussian function $g(z) = e^{-z^2}$
+has no singularities on the entire complex plane. This property has bothered many and in 1914 a mathematician G. N. Watson
+said in his textbook <em>Complex Integration and Cauchy&rsquo;s Theorem</em> that</p><blockquote><p>Cauchy’s theorem cannot be employed to evaluate all definite integrals; thus $\displaystyle\int_0^\infty e^{-x^2}dx$ has not
+been evaluated except by other methods.</p></blockquote><p>Finally in 1940s, several proofs were published using the residue theorem. However there proofs are based on awkward
+contours and analytic functions that seem to come out of nowhere. For example, Kneser has used the following definition <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>
+\begin{equation}
+\frac{e^{-z^2/2}}{1-e^{-\sqrt{\pi}(1+i)z}}.
+\end{equation}
+Basically the idea is to construct an analytic function that looks like the Gaussian but with poles so that the
+residue theorem can be applied.</p><p>While I like the beauty and power of the residue theorem, the complex analysis proof just seems too <em>complex</em> and artificial
+for my taste. The standard textbook proof is simple and incorporates naturally the reason why $\pi$ is there in the normalization.
+Anyway, I found this little fact a bit interesting.</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>H. Kneser, Funktionentheorie, Vandenhoeck and Ruprecht, 1958.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
+<span class=item-content>fermion</span></p><p class=copyright-item><span class=item-title>LastMod</span>
+<span class=item-content>2021-12-25</span></p></div><footer class=post-footer><nav class=post-nav><a class=prev href=/post/2022/mlops-week11-aws-ml-technologies/><i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">Study notes: MLops Week 1-1 AWS Machine Learning Technologies</span>
+<span class="prev-text nav-mobile">Prev</span></a></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=https://github.com/chang48 class="iconfont icon-github" title=github></a>
+<a href=https://www.instagram.com/justarandomwalker/ class="iconfont icon-instagram" title=instagram></a>
+<a href=http://chang48.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2023<span class=heart><i class="iconfont icon-heart"></i></span><span>fermion</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js></script>
+<script type=text/javascript>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]]}}</script><script async src=https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin=anonymous></script></body></html>

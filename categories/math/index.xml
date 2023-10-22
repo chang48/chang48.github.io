@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>math on walking in the woods</title><link>http://chang48.github.io/categories/math/</link><description>Recent content in math on walking in the woods</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 25 Dec 2021 00:46:08 -0700</lastBuildDate><atom:link href="http://chang48.github.io/categories/math/index.xml" rel="self" type="application/rss+xml"/><item><title>Normal distributions and $\pi$</title><link>http://chang48.github.io/post/2021/gaussial-integral/</link><pubDate>Sat, 25 Dec 2021 00:46:08 -0700</pubDate><guid>http://chang48.github.io/post/2021/gaussial-integral/</guid><description>&lt;p>Normal distributions are a class of continuous probability distribution for random variables.
+They often show up in measurements of physical quantities. For example,
+&lt;a href="https://ourworldindata.org/human-height#height-is-normally-distributed" target="_blank">
+the human height is normally distributed&lt;/a>. In fact, it is claimed that variables in natural
+and social sciences are normally or approximately normally distributed. Weight, reading
+ability, test scores, blood pressure, $\ldots$&lt;/p></description></item></channel></rss>
