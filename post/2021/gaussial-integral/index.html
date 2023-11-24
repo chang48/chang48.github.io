@@ -1,6 +1,6 @@
 <!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Normal distributions and $\pi$ - walking in the woods</title>
 <meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=Cache-Control content="no-transform"><meta http-equiv=Cache-Control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="fermion"><meta name=description content="Normal distributions are a class of continuous probability distribution for random variables. They often show up in measurements of physical quantities. For example, the human height is normally distributed. In fact, it is claimed that variables in natural and social sciences are normally or approximately normally distributed. Weight, reading ability, test scores, blood pressure, $\ldots$
-"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.120.3 with theme even"><link rel=canonical href=http://chang48.github.io/post/2021/gaussial-integral/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Normal distributions and $\pi$"><meta property="og:description" content="Normal distributions are a class of continuous probability distribution for random variables.
+"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.120.4 with theme even"><link rel=canonical href=http://chang48.github.io/post/2021/gaussial-integral/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="Normal distributions and $\pi$"><meta property="og:description" content="Normal distributions are a class of continuous probability distribution for random variables.
 They often show up in measurements of physical quantities. For example,
 
 the human height is normally distributed. In fact, it is claimed that variables in natural
@@ -10,7 +10,7 @@ They often show up in measurements of physical quantities. For example,
 
 the human height is normally distributed. In fact, it is claimed that variables in natural
 and social sciences are normally or approximately normally distributed. Weight, reading
-ability, test scores, blood pressure, $\ldots$"><meta itemprop=datePublished content="2021-12-25T00:46:08-07:00"><meta itemprop=dateModified content="2021-12-25T00:46:08-07:00"><meta itemprop=wordCount content="716"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Normal distributions and $\pi$"><meta name=twitter:description content="Normal distributions are a class of continuous probability distribution for random variables.
+ability, test scores, blood pressure, $\ldots$"><meta itemprop=datePublished content="2021-12-25T00:46:08-07:00"><meta itemprop=dateModified content="2021-12-25T00:46:08-07:00"><meta itemprop=wordCount content="724"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Normal distributions and $\pi$"><meta name=twitter:description content="Normal distributions are a class of continuous probability distribution for random variables.
 They often show up in measurements of physical quantities. For example,
 
 the human height is normally distributed. In fact, it is claimed that variables in natural
@@ -42,12 +42,12 @@ calculated. A normal distribution belongs to a type of function called the Gauss
 $g(x) = e^{-x^2}$. Its integral is
 \begin{equation}
 \int_{-\infty}^\infty e^{-x^2}dx = \sqrt{\pi}.
-\end{equation}</p><h3 id=standard-approach>Standard approach</h3><p>A textbook approach to compute the Gaussian integral is to compute the square of the integral
+\end{equation}</p><h3 id=standard-approach>Standard approach</h3><p>A textbook approach for getting the normalization constant is to compute the square of the Gaussian integral
 \begin{equation}
 \left(\int_{-\infty}^\infty e^{-x^2}dx\right)^2 = \int_{-\infty}^\infty\int_{-\infty}^\infty e^{-(x^2+y^2)}dxdy.
 \end{equation}
-We can translate the Cartesian coordinates $(x,y)$ into polar coordinates $(r,\theta)$ using the
-identity
+In this way, we can leverage the coordinate transformation to map the Cartesian coordinates $(x,y)$ into polar
+coordinates $(r,\theta)$ using the identity
 \begin{equation}
 x^2+y^2 = r^2,
 \end{equation}
@@ -63,7 +63,7 @@ integral now becomes
 As a result, the normalization of the Gaussian function is $\sqrt{\pi}$.</p><h3 id=contour-integration>Contour integration</h3><p>Of course, the method described above is not the only way to normalize the Gaussian integral. There are many
 proofs ranging from differentiation of an integral, volume integration, $\Gamma$-function,
 asymptotic approximation, Stirling&rsquo;s formula, Laplace&rsquo;s original proof, and the residue theorem.</p><p>Speaking about the residue theorem, it is a powerful tool for evaluating integrals. The theorem generalizes the Cauchy&rsquo;s
-theorem in that it expresses the integral of an analytic function $f(z)$ around a closed contour $C$ depends <em>only</em> on
+theorem and says that the integral of an analytic function $f(z)$ around a closed contour $C$ depends <em>only</em> on
 the properties of a few special points (singularities, or poles) inside the contour.</p><figure class=center><img src=residue.png width=260></figure><p>\begin{equation}
 \int_C f(z) dz = 2\pi i\sum_{j=1}^n R_j,
 \end{equation}
